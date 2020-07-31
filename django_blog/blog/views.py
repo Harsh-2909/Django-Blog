@@ -5,13 +5,13 @@ from django.http import HttpResponse
 posts= [
     {
         'author': 'Harsh Agarwal',
-        'topic': 'Data Science',
+        'title': 'Data Science',
         'date_posted': '30 July 2020',
         'content': 'Content no 1'
     },
     {
         'author': 'John Doe',
-        'topic': 'Data Science',
+        'title': 'Data Science',
         'date_posted': '31 July 2020',
         'content': 'Content no 2'
     }
