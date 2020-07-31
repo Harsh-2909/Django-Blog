@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-        <title>Django Blog - {{ title }}</title>
-    {% else %}
-        <title>Django Blog</title>
-    {% endif %}
-</head>
-<body>
+{% extends "blog/base.html" %} 
+{% block content %}
     <h1>Blog Home!</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Molestiae accusamus adipisci nesciunt cupiditate corporis consequatur vel cumque. Nesciunt, omnis voluptas.</p>
     {% for post in posts %}
         <h1>{{ post.topic }}</h1>
         <h4>Written by {{ post.author }} on {{ post.date_posted }}</h4>
         <p>{{ post.content }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock content %}
