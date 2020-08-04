@@ -1,26 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from .models import Post
 
 
-posts= [
-    {
-        'author': 'Harsh Agarwal',
-        'title': 'Data Science',
-        'date_posted': '30 July 2020',
-        'content': 'Content no 1'
-    },
-    {
-        'author': 'John Doe',
-        'title': 'Data Science',
-        'date_posted': '31 July 2020',
-        'content': 'Content no 2'
-    }
-]
-
-# Create your views here.
+# Create your views here.   
 def home(request):
     context={
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
 
