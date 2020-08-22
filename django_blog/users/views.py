@@ -28,8 +28,10 @@ def profile(request):
 
     if userForm.is_valid() and profileForm.is_valid():
         userForm.save()
+        profileForm.save()
         username = userForm.cleaned_data.get('username')
         messages.success(request, f"Account {username} successfully updated!")
+        return redirect('user-profile')
 
     context = {
         'u_form': userForm,
