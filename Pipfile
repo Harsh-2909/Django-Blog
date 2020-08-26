@@ -10,6 +10,7 @@ pylint = "*"
 django = "*"
 django-crispy-forms = "*"
 pillow = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
